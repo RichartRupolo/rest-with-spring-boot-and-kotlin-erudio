@@ -6,12 +6,15 @@ import org.springframework.web.bind.annotation.RestController
 import java.util.concurrent.atomic.AtomicLong
 
 @RestController
-class GreetingController {
+class MathController {
 
     val counter: AtomicLong = AtomicLong()
 
-    @RequestMapping("/greeting")
-    fun greeting(@RequestParam(value="name", defaultValue = "World") name: String?): Greeting {
-        return Greeting(counter.incrementAndGet(), "Hello, $name!")
+    @RequestMapping(value = ["sum/{numberOne}/{numberTwo}"])
+    fun greeting(
+                    @RequestParam(value="numberOne") numberOne: String?,
+                    @RequestParam(value="numberTwo") numberTwo: String?
+    ): Double {
+        return 1.0
     }
 }
