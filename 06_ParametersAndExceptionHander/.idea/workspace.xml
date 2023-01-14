@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d907866-09ff-42f2-a5cc-790d6860274d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rest-with-spring-boot-and-kotlin-erudio/src/main/kotlin/br/com/erudio/converters/NumberConverter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rest-with-spring-boot-and-kotlin-erudio/src/main/kotlin/br/com/erudio/math/SimpleMath.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rest-with-spring-boot-and-kotlin-erudio/src/main/kotlin/br/com/erudio/controller/PersonController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rest-with-spring-boot-and-kotlin-erudio/src/main/kotlin/br/com/erudio/model/Person.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rest-with-spring-boot-and-kotlin-erudio/src/main/kotlin/br/com/erudio/services/PersonService.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest-with-spring-boot-and-kotlin-erudio/src/main/kotlin/br/com/erudio/MathController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/rest-with-spring-boot-and-kotlin-erudio/src/main/kotlin/br/com/erudio/controller/MathController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest-with-spring-boot-and-kotlin-erudio/src/main/kotlin/br/com/erudio/startup.kt" beforeDir="false" afterPath="$PROJECT_DIR$/rest-with-spring-boot-and-kotlin-erudio/src/main/kotlin/br/com/erudio/Startup.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-with-spring-boot-and-kotlin-erudio/src/main/kotlin/br/com/erudio/controller/MathController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/rest-with-spring-boot-and-kotlin-erudio/src/main/kotlin/br/com/erudio/controller/MathController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-with-spring-boot-and-kotlin-erudio/src/main/kotlin/br/com/erudio/math/SimpleMath.kt" beforeDir="false" afterPath="$PROJECT_DIR$/rest-with-spring-boot-and-kotlin-erudio/src/main/kotlin/br/com/erudio/math/SimpleMath.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +62,20 @@
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="br.com.erudio.controller" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="StartupKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.erudio.StartupKt" />
+      <module name="rest-with-spring-boot-and-kotlin-erudio" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.StartupKt" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

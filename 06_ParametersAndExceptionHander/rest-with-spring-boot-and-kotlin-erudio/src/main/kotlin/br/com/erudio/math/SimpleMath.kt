@@ -10,5 +10,4 @@ class SimpleMath {
         fun pow(numberOne: Double, numberTwo: Double) = numberOne.pow(numberTwo)
         fun mean(numberOne: Double, numberTwo: Double) = (numberOne + numberTwo) / 2
         fun squareRoot(numberOne: Double) = sqrt(numberOne)
-
     }
