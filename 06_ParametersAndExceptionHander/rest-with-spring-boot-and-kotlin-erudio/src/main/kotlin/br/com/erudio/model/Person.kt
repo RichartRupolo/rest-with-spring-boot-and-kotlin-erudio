@@ -1,6 +1,7 @@
 package br.com.erudio.model
 
 import jakarta.persistence.*
+import java.util.*
 
 @Entity
 @Table(name = "person")
@@ -20,5 +21,8 @@ data class Person(
     var address: String = "",
 
     @Column(nullable = false, length = 10)
-    var gender: String = ""
+    var gender: String = "",
+
+    @Column(nullable = true)
+    var birthDay: Date? = null
 )
