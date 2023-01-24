@@ -1,8 +1,8 @@
 package br.com.erudio.exceptions.handler
 
 import br.com.erudio.exceptions.ExceptionResponse
+import br.com.erudio.exceptions.RequiredObjectIsNullException
 import br.com.erudio.exceptions.ResourceNotFoundException
-import br.com.erudio.exceptions.UnsupportedMathOperationException
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.ControllerAdvice
@@ -27,19 +27,8 @@ class CustomizedResponseEntityExceptionHandler : ResponseEntityExceptionHandler(
         return ResponseEntity<ExceptionResponse>(exceptioResponse, HttpStatus.INTERNAL_SERVER_ERROR)
     }
 
-    @ExceptionHandler(UnsupportedMathOperationException::class)
-    fun handleUnsupportedMathOperationExceptions(ex: Exception, request: WebRequest) :
-            ResponseEntity<ExceptionResponse> {
-        val exceptioResponse = ExceptionResponse(
-            Date(),
-            ex.message,
-            request.getDescription(false)
-        )
-        return ResponseEntity<ExceptionResponse>(exceptioResponse, HttpStatus.BAD_REQUEST)
-    }
-
     @ExceptionHandler(ResourceNotFoundException::class)
-    fun handleBadRequestExceptions(ex: Exception, request: WebRequest) :
+    fun handleResourceNotFoundExceptions(ex: Exception, request: WebRequest) :
             ResponseEntity<ExceptionResponse> {
         val exceptioResponse = ExceptionResponse(
             Date(),
@@ -47,5 +36,16 @@ class CustomizedResponseEntityExceptionHandler : ResponseEntityExceptionHandler(
             request.getDescription(false)
         )
         return ResponseEntity<ExceptionResponse>(exceptioResponse, HttpStatus.NOT_FOUND)
+    }
+
+    @ExceptionHandler(RequiredObjectIsNullException::class)
+    fun handleBadRequestExceptions(ex: Exception, request: WebRequest) :
+            ResponseEntity<ExceptionResponse> {
+        val exceptioResponse = ExceptionResponse(
+            Date(),
+            ex.message,
+            request.getDescription(false)
+        )
+        return ResponseEntity<ExceptionResponse>(exceptioResponse, HttpStatus.BAD_REQUEST)
     }
 }

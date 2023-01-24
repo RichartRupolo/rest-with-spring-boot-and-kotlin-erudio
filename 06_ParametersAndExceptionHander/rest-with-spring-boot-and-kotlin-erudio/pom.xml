@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.0.0-M4</version>
+		<version>3.0.0-M3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.erudio</groupId>
@@ -16,7 +16,11 @@
 	<properties>
 		<java.version>17</java.version>
 		<kotlin.version>1.6.10</kotlin.version>
-		<dozer.version>6.5.2</dozer.version>
+		<!--<dozer.version>6.5.2</dozer.version>-->
+		<dozer.version>6.4.1</dozer.version>
+		<springdoc.version>2.0.1</springdoc.version>
+		<testcontainers.version>1.16.3</testcontainers.version>
+		<rest-assured.version>4.5.0</rest-assured.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -26,6 +30,10 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.hateoas</groupId>
+			<artifactId>spring-hateoas</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.module</groupId>
@@ -66,29 +74,37 @@
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
 			<artifactId>jackson-dataformat-yaml</artifactId>
 		</dependency>
-
-		<!--<dependency>
-			<groupId>jakarta.xml.bind</groupId>
-			<artifactId>jakarta.xml.bind-api</artifactId>
-			<version>2.3.2</version>
-		</dependency>
-
 		<dependency>
-			<groupId>org.glassfish.jaxb</groupId>
-			<artifactId>jaxb-runtime</artifactId>
-			<version>2.3.2</version>
-		</dependency>-->
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<optional>true</optional>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>${springdoc.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>${rest-assured.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>mysql</artifactId>
+			<version>${testcontainers.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
 		</dependency>
 	</dependencies>
 
@@ -123,9 +139,9 @@
 				<groupId>org.flywaydb</groupId>
 				<artifactId>flyway-maven-plugin</artifactId>
 				<configuration>
-					<url>jdbc:mysql://localhost:3306/rest_with_spring_boot_erudio?useTimezone=true&amp;serverTimezone=UTC&amp;useSSL=false</url>
+					<url>jdbc:mysql://localhost:3310/rest_with_spring_boot_erudio?useTimezone=true&amp;serverTimezone=UTC&amp;useSSL=false</url>
 					<user>root</user>
-					<password>admin123</password>
+					<password>root</password>
 				</configuration>
 				<dependencies>
 					<dependency>
@@ -149,7 +165,7 @@
 			<name>Spring Milestones</name>
 			<url>https://repo.spring.io/milestone</url>
 			<snapshots>
-				<enabled>false</enabled>
+				<enabled>true</enabled>
 			</snapshots>
 		</repository>
 	</repositories>
@@ -159,7 +175,7 @@
 			<name>Spring Milestones</name>
 			<url>https://repo.spring.io/milestone</url>
 			<snapshots>
-				<enabled>false</enabled>
+				<enabled>true</enabled>
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
