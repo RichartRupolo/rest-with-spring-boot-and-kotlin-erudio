@@ -10,7 +10,7 @@ class OpenApiConfig {
     fun customOpenApi() : OpenAPI {
 
         return OpenAPI().info(
-                    Info().title("RESTful API with kotlin 1.6.10 and Spring boot 3")
+                    Info().title("RESTful API with kotlin 1.8.0 and Spring boot 3.0.1")
                         .version("v1")
                         .description("Test API")
                         .termsOfService("")
